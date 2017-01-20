@@ -1,0 +1,30 @@
+﻿@model IEnumerable<RPGmvc.Models.Character>
+
+<div style="padding:10px;">
+    Welcome in RPG Master, the website that helps you manage the character sheet of your different characters.
+
+    You can create characters, or edit the old characters of your player group. We will add functions with time, so come back often!
+</div>
+
+<p>
+    @Html.ActionLink("Create a new character", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Existing Characters</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.characterName) <br />
+            (of player @Html.DisplayFor(model => item.playerName) ) <br />
+
+            @Html.ActionLink("Edit the skills", "EditSkills", new { name = item.characterName }) |
+            @Html.ActionLink("Details", "Details", new { name = item.characterName }) |
+            @*@Html.ActionLink("Delete", "Delete", new { name = item.characterName })*@
+        </td>
+    </tr>
+}
+
+</table>

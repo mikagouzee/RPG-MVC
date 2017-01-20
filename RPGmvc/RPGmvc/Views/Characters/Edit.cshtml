@@ -1,0 +1,148 @@
+﻿@model RPGmvc.Models.Character
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+        <h4>Character @Html.DisplayFor(model => model.characterName)</h4>
+        @Html.HiddenFor(model => model.characterName)
+        @Html.HiddenFor(model => model.playerName)
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="row">
+        <div class="metier">
+            <p>Si ce n'est pas encore fait, n'oubliez pas de choisir votre métier!</p>
+            @Html.DropDownListFor(model => model.careerName, new SelectList(Model.game.professions, "name", "name"), "whatever", new { @class="form-control", style = "width: 100px" })
+            @Html.HiddenFor(model => model.metier)
+            <br />
+        </div>
+
+        <!--SECTION BASE ATTRIBUTES-->
+        <div class="col-md-3">
+
+            <!--with for : replaced every instance of an Interface by it's implementation :(-->
+            <!--This was a PITA to deal with : you need a control on the name, but also the index of the values, and it can't be an interface.-->
+             @for (int i = 0; i < Model.baseAttr.Count; i++)
+            {
+                <div>
+                    <label>@Html.DisplayFor(model => model.baseAttr[i].name)</label>
+                    @Html.HiddenFor(model => model.baseAttr[i].name)
+                   <p>@Html.TextBoxFor(model => model.baseAttr[i].value, new { @class = "form-control", @readonly="readonly" })</p>
+                </div> 
+            }
+             
+        </div>
+
+        <!--SECTIONS STATS-->
+        <div class="col-md-3">
+            @for (int i = 0; i < Model.stats.Count; i++)
+            {
+                <div>
+                    <label>@Html.DisplayFor(model => model.stats[i].name)</label>
+                    @Html.HiddenFor(model => model.stats[i].name)
+                    <p>@Html.TextBoxFor(model => model.stats[i].value, new { @class = "form-control", @readonly = "readonly" })</p>
+                </div>
+            }
+
+        </div>
+
+        <!--Spendpoints-->
+        <div class="col-md-3">
+            
+            @for (int i = 0; i < Model.spendPoints.Count; i++)
+            {
+                <div>
+                    <label>@Html.DisplayFor(model => model.spendPoints[i].name)</label>
+                    @Html.HiddenFor(model => model.spendPoints[i].name)
+                    <p>@Html.TextBoxFor(model => model.spendPoints[i].value, new { id = @Model.spendPoints[i].name.Replace(" ", "_").ToLower(), @class = "form-control",@readonly="readonly" })</p>
+                </div>
+            }
+
+        </div>
+    </div>
+    
+    <div class="row">
+        <!--SECTION SKILLS-->
+        <div class="col-md-3">
+           
+            @for (int i = 0; i < Model.skills.Count; i++)
+            {
+                <div class="col-sm-8">
+                    <label>@Html.DisplayFor(model => model.skills[i].name)</label>
+                    @Html.HiddenFor(model => model.skills[i].name)
+                </div>
+    <div class="col-sm-4">
+        @Html.TextBoxFor(model => model.skills[i].value, new { @class = "value form-control",@readonly="readonly"})
+        <input type="button" value="+" class="increment" />
+        <input type="button" value="-" class="decrement" />
+    </div>
+            }
+        </div>
+
+
+    </div>
+    
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+        var baseSkillPoint = $('#occupation_skill_points').val();
+
+
+    $('.increment').on('click', function () {
+            var element = $(this);
+            var value = element.parent().find('.value').val();
+            var osp = $('#occupation_skill_points');
+            var skillPoint = osp.val();
+
+            if (skillPoint < 0) {
+                alert("Vous n'avez plus de points de compétences à répartir.");
+            }
+            else if (value >= 100) {
+                alert("Vous avez déjà le maximum possible dans cette compétence.");
+            }
+            else {
+                value++;
+                skillPoint--;
+
+                element.parent().find('.value').val(value);
+                osp.val(skillPoint);
+            }
+        });
+    
+    $('.decrement').on('click', function () {
+        var element = $(this);
+        var value = element.parent().find('.value').val();
+        var osp = $('#occupation_skill_points');
+        var skillPoint = osp.val();
+
+        if (value <= 0) {
+            alert("Vous ne pouvez plus retirer de points à cette compétence");
+        }
+        else if (skillPoint >= baseSkillPoint) {
+            alert("Bien essayé... Mais vous n'avez pas tant de points de compétences que cela! ");
+        }
+        else {
+            value--;
+            skillPoint++;
+            element.parent().find('.value').val(value);
+            osp.val(skillPoint);
+        }
+    });
+
+</script>

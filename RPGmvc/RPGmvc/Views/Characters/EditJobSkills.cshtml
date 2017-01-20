@@ -1,0 +1,77 @@
+﻿@model RPGmvc.Models.Character
+
+
+@using (Html.BeginForm())
+{
+   
+    
+    <div class="form-horizontal">
+        <h5>Job Skills</h5>
+
+            @for (int i = 0; i < Model.skills.Count; i++)
+            {
+                if (Model.metier.jobSkills.Contains(Model.skills[i]))
+                {
+                    <div class="col-sm-8">
+                        <label>@Html.DisplayFor(model => model.skills[i].name)</label>
+                        @Html.HiddenFor(model => model.skills[i].name)
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.skills[i].value, new { @class = "value form-control", @readonly = "readonly" })
+                        <input type="button" value="+" class="incrementJob" />
+                        <input type="button" value="-" class="decrementJob" />
+                    </div>
+                <br />
+                }
+            }
+    </div>
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+        var JobbaseSkillPoint = $('#job_skill_points').val();
+
+
+    $('.incrementJob').on('click', function () {
+            var element = $(this);
+            var value = element.parent().find('.value').val();
+            var jsp = $('#job_skill_points');
+            var skillPoint = jsp.val();
+
+            if (skillPoint < 0) {
+                alert("Vous n'avez plus de points de compétences à répartir.");
+            }
+            else if (value >= 100) {
+                alert("Vous avez déjà le maximum possible dans cette compétence.");
+            }
+            else {
+                value++;
+                skillPoint--;
+
+                element.parent().find('.value').val(value);
+                jsp.val(skillPoint);
+            }
+        });
+
+    $('.decrementJob').on('click', function () {
+        var element = $(this);
+        var value = element.parent().find('.value').val();
+        var jsp = $('#job_skill_points');
+        var skillPoint = jsp.val();
+
+        if (value <= 0) {
+            alert("Vous ne pouvez plus retirer de points à cette compétence");
+        }
+        else if (skillPoint >= JobbaseSkillPoint) {
+            alert("Bien essayé... Mais vous n'avez pas tant de points de compétences que cela! ");
+        }
+        else {
+            value--;
+            skillPoint++;
+            element.parent().find('.value').val(value);
+            jsp.val(skillPoint);
+        }
+    });
+
+</script>

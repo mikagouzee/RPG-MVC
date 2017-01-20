@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    MVC demonstration
+</div>
+
+<div class="row">
+   @Html.ActionLink("Create a new character", "Create", "Characters")
+    <br />
+    @Server.MapPath("~/App_Data/Characters")
+
+</div>

@@ -1,0 +1,91 @@
+﻿@model RPGmvc.Models.Character
+
+<div>
+    <h4>Character</h4>
+    <hr />
+    
+    <h5>Infos</h5>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.characterName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.characterName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.playerName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.playerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.game)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.game.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.careerName)
+        </dt> 
+        <dd>
+            @Html.DisplayFor(model => model.careerName)
+        </dd>
+    </dl>
+</div>
+
+<div class="row">
+    <!--SECTION BASE ATTRIBUTES-->
+    <div class="col-md-3">
+        @foreach (var item in Model.baseAttr)
+        {
+            <div>
+                <label>@Html.DisplayFor(model => item.name)</label>
+                <p>@Html.DisplayFor(model => item.value)</p>
+            </div>
+        }
+    </div>
+
+    <!--SECTIONS STATS-->
+    <div class="col-md-3">
+        @foreach (var item in Model.stats)
+        {
+            <div>
+                <label>@Html.DisplayFor(model => item.name)</label>
+                <p>@Html.DisplayFor(model => item.value)</p>
+            </div>
+        }
+    </div>
+
+    <!--Spendpoints-->
+    <div class="col-md-3">
+        @foreach (var item in Model.spendPoints)
+        {
+            <div>
+                <label>@Html.DisplayFor(model => item.name)</label>
+                <p>@Html.DisplayFor(model => item.value)</p>
+            </div>
+        }
+    </div>
+
+    <!--SECTION SKILLS-->
+    <div class="col-md-3">
+        @foreach (var item in Model.skills)
+        {
+            <div class="col-sm-8">
+                <label>@Html.DisplayFor(model => item.name)</label>
+            </div>
+            <div class="col-sm-4">
+                @Html.DisplayFor(model => item.value) 
+                
+            </div>
+
+        }
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { name = Model.characterName }) |
+    @Html.ActionLink("Edit Skills", "EditSkills", new { name = Model.characterName }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

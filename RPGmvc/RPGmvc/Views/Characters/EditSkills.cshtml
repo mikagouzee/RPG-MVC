@@ -1,0 +1,139 @@
+﻿@model RPGmvc.Models.Character
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Skills of Character @Html.DisplayFor(model => model.characterName)</h4>
+        @Html.HiddenFor(model => model.characterName)
+        <hr />
+        <div class="row">
+            
+            @for (int i = 0; i < Model.spendPoints.Count; i++)
+            {
+                if (Model.spendPoints[i].name == "Occupation skill points")
+                {
+                    <div class="col-md-6">
+                        <label>Remaining points for your job skills:</label>
+                        @Html.TextBoxFor(model => model.spendPoints[i].value, new { @readonly = "readonly", id = "job_skill_points", @class = "form-control" })
+                        @Html.HiddenFor(model => model.spendPoints[i].name)
+                    </div>
+                }
+                else if (Model.spendPoints[i].name == "Personal interest skill points")
+                {
+                    <div class="col-md-6">
+                        <label>Remaining points for personal interest skills:</label>
+                        @Html.TextBoxFor(model => model.spendPoints[i].value, new { @readonly = "readonly", id = "occupation_skill_points", @class = "form-control" })
+                        @Html.HiddenFor(model => model.spendPoints[i].name)
+                    </div>
+                }
+                else
+                {
+                    @Html.HiddenFor(model => model.spendPoints[i].name)
+                    @Html.HiddenFor(model => model.spendPoints[i].value)
+                }
+            }
+
+
+            
+
+        </div>
+                <hr />
+        <div class="row">
+
+            <div class="col-md-5">
+                @Html.Partial("EditJobSkills")
+            </div>
+            
+
+            <div class="col-md-2">
+                |
+            </div>
+
+            <div class="col-md-5">
+                <h5>Personal interest skills </h5>
+                @for (int i = 0; i < Model.skills.Count; i++)
+                {
+                    //if it's not in the jobskills, it's personal
+                    if (!Model.metier.jobSkills.Contains(Model.skills[i]))
+                    {
+                        <div class="col-sm-8">
+                            <label>@Html.DisplayFor(model => model.skills[i].name)</label>
+                            @Html.HiddenFor(model => model.skills[i].name)
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.skills[i].value, new { @class = "value form-control", @readonly = "readonly" })
+                            <input type="button" value="+" class="increment" />
+                            <input type="button" value="-" class="decrement" />
+                        </div>
+                        <br>
+                    }
+                }
+            </div>
+            
+        </div>
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+        var baseSkillPoint = $('#occupation_skill_points').val();
+    
+    $('.increment').on('click', function () {
+            var element = $(this);
+            var value = element.parent().find('.value').val();
+            var osp = $('#occupation_skill_points');
+            var skillPoint = osp.val();
+
+            if (skillPoint < 0) {
+                alert("Vous n'avez plus de points de compétences à répartir.");
+            }
+            else if (value >= 100) {
+                alert("Vous avez déjà le maximum possible dans cette compétence.");
+            }
+            else {
+                value++;
+                skillPoint--;
+
+                element.parent().find('.value').val(value);
+                osp.val(skillPoint);
+            }
+        });
+
+    $('.decrement').on('click', function () {
+        var element = $(this);
+        var value = element.parent().find('.value').val();
+        var osp = $('#occupation_skill_points');
+        var skillPoint = osp.val();
+
+        if (value <= 0) {
+            alert("Vous ne pouvez plus retirer de points à cette compétence");
+        }
+        else if (skillPoint >= baseSkillPoint) {
+            alert("Bien essayé... Mais vous n'avez pas tant de points de compétences que cela! ");
+        }
+        else {
+            value--;
+            skillPoint++;
+            element.parent().find('.value').val(value);
+            osp.val(skillPoint);
+        }
+    });
+
+</script>

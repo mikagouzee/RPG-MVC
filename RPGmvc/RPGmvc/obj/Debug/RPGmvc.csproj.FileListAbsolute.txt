@@ -1,0 +1,52 @@
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\RPGmvc.dll.config
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\RPGmvc.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\RPGmvc.pdb
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\Antlr3.Runtime.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\Microsoft.Web.Infrastructure.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\Newtonsoft.Json.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.Helpers.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.Mvc.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.Optimization.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.Razor.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.WebPages.Deployment.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.WebPages.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.WebPages.Razor.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\WebGrease.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.Helpers.xml
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.Mvc.xml
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.Optimization.xml
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.Razor.xml
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.WebPages.xml
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.WebPages.Deployment.xml
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\System.Web.WebPages.Razor.xml
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\Antlr3.Runtime.pdb
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\bin\Newtonsoft.Json.xml
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\obj\Debug\RPGmvc.dll
+c:\users\id846752\documents\visual studio 2013\Projects\RPGmvc\RPGmvc\obj\Debug\RPGmvc.pdb
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\RPGmvc.dll.config
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\RPGmvc.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\RPGmvc.pdb
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\Antlr3.Runtime.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\Newtonsoft.Json.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.Helpers.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.Mvc.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.Optimization.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.Razor.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.WebPages.Deployment.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.WebPages.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.WebPages.Razor.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\WebGrease.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.Helpers.xml
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.Mvc.xml
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.Optimization.xml
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.Razor.xml
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.WebPages.xml
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.WebPages.Deployment.xml
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\System.Web.WebPages.Razor.xml
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\Antlr3.Runtime.pdb
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\bin\Newtonsoft.Json.xml
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\obj\Debug\RPGmvc.csprojResolveAssemblyReference.cache
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\obj\Debug\RPGmvc.dll
+C:\Users\mgouzee\Desktop\RPGmvc\RPGmvc\obj\Debug\RPGmvc.pdb
+C:\Users\id846752\Documents\Visual Studio 2013\Projects\RPGmvc\RPGmvc\obj\Debug\RPGmvc.csprojResolveAssemblyReference.cache
